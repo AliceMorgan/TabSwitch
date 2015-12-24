@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			font-size:12px;
+		}
+		#title li{
+			display:inline-block;
+			border:solid 1px #A0989A;
+			border-bottom:none;
+			height:30px;
+			width:70px;
+			text-align:center;
+			line-height:30px;
+			cursor:pointer;
+
+
+		}
+		div {
+			border:solid 2px #99A0D6;
+			border-top:solid 3px #C09362;
+			width:300px;
+			height:150px;
+			position:absolute;/*absolute的position为什么可以使三个div重合呢？*/
+			padding-left:3px;
+			
+		}
+		#title{
+			margin-bottom:0;
+			padding:1px;
+
+		}
+		
+		.hide{
+			display:none;
+		}
+		.on{
+			display:block;
+		}
+
+	</style>
+	
+	<script type="text/javascript">//为什么不成功呢？
+		window.onload=function(){
+			var oLis=document.getElementsByTagName('li');
+			var oDivs=document.getElementsByTagName('div');
+			for( var i=0;i<oLis.length;i++){
+				oLis[i].onclick=function(){
+					for(var n=0;n<oLis.length;n++){
+						if(n==i){
+							oDiv[n].className='on';
+						}
+						else{
+							oDiv[n].className='hide';
+						}
+						
+					}
+				}
+			}
+		}
+	</script>
+<body>
+	<ul id='title'>
+		<li>房产</li>
+		<li>家居</li>
+		<li>二手房</li>
+	</ul>
+
+	<div class='hide'>
+		<p>275万购昌平邻铁三居 总价20万买一居</p>
+		<p>200万内购五环三居 140万安家东三环</p>
+		<p>北京首现零首付楼盘 53万购东5环50平</p>
+		<p>京楼盘直降5000 中信府 公园楼王现房</p>
+	</div>
+
+	<div class='on'>
+		<p>40平出租屋大改造 美少女的混搭小窝</p>
+		<p>经典清新简欧爱家 90平老房焕发新生</p>
+		<p>新中式的酷色温情 66平撞色活泼家居</p>
+		<p>瓷砖就像选好老婆 卫生间烟道的设计</p>
+	</div>
+
+	<div class='hide'>
+		<p>通州豪华3居260万 二环稀缺2居250w甩</p>
+		<p>西3环通透2居290万 130万2居限量抢购</p>
+		<p>黄城根小学学区仅260万 121平70万抛!</p>
+		<p>独家别墅280万 苏州桥2居优惠价248万</p>
+	</div>
+</body>
+</html>
